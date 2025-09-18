@@ -1,0 +1,101 @@
+/* ====== Body ====== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f0f4f8);
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    text-decoration: underline;
+    color: #0097a7;
+}
+/* ====== Page title ====== */
+h2 {
+    color: #34495e;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    border: 4px solid #00bcd4; /* Increased border thickness */
+    padding: 15px 20px; /* Added padding */
+    border-radius: 10px; /* Added border-radius */
+    margin-top: 30px; /* Added margin-top */
+    font-size: 30px; /* Increased font size */
+    display: inline-block; /* To make border fit content */
+}
+
+/* ====== Form container ====== */
+form {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px 35px;
+    border-radius: 15px;
+    display: flex; /* Changed from inline-block */
+    flex-wrap: wrap;
+    justify-content: space-between; /* To space out columns */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    text-align: left;
+    max-width: 980px; /* Increased max-width to accommodate two columns */
+    width: 100%;
+    margin: 0 auto; /* Center the form horizontally */
+    backdrop-filter: blur(5px);
+}
+
+/* New style for grouping label and input */
+.form-group {
+    width: calc(50% - 15px); /* Two columns with some space in between */
+    margin-bottom: 18px;
+}
+
+/* ====== Labels ====== */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #2c3e50;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* ====== Inputs and select ====== */
+input[type="text"], select {
+    width: 100%;
+    padding: 10px 2px;
+    margin-bottom: 18px;
+    border: 1px solid #b0bec5;
+    border-radius: 12px;
+    font-size: 14px;
+    background: #ffffff;
+    transition: all 0.25s ease;
+}
+
+/* Focus effect for inputs */
+input[type="text"]:focus, select:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 6px 12px rgba(0,188,212,0.2);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+/* ====== Submit button ====== */
+input[type="submit"] {
+    background: #00bcd4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px; /* Add some space above the button */
+    transition: all 0.25s ease;
+}
+
+input[type="submit"]:hover {
+    background: #0097a7;
+    box-shadow: 0 6px 16px rgba(0,188,212,0.4);
+    transform: translateY(-2px);
+}
