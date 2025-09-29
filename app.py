@@ -1,11 +1,29 @@
 from flask import Flask, render_template, request
 import joblib
 import pandas as pd
+import os
+import requests
+import gdown
 
 app = Flask(__name__)
 
-model = joblib.load('Model.pkl')
-pipeline = joblib.load('Pipeline.pkl')
+MODEL_FILE = "Model.pkl"
+PIPELINE_FILE = "Pipeline.pkl"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1Zdyz3l-tvRwvsEyXs8ddkhhmAkhZj0sD"
+PIPELINE_URL = "https://drive.google.com/uc?export=download&id=1MrNa7XtTapMOBQLRixyDCWxzKj9l6dlh"
+
+if not os.path.exists(MODEL_FILE):
+    try:
+        print("Downloading pretrained model...")
+        gdown.download(MODEL_URL, MODEL_FILE, quiet=False)
+        gdown.download(PIPELINE_URL, PIPELINE_FILE, quiet=False)
+        print("Pretrained model downloaded successfully.")
+    except Exception as e:
+        print("Download failed. Training locally (if dataset exists)...")
+
+
+model = joblib.load(MODEL_FILE)
+pipeline = joblib.load(PIPELINE_FILE)
 
 
 @app.route('/')
